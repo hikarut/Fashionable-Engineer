@@ -1,3 +1,6 @@
+const apiKey = process.env.API_KEY || 'apiKey'
+const constant = require('./config/constant.json')
+
 export default {
   mode: 'universal',
   /*
@@ -19,7 +22,7 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: '#0a0716', height: '5px' },
   /*
   ** Global CSS
   */
@@ -27,7 +30,7 @@ export default {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [],
+  plugins: [{ src: '~/plugins/axios.js' }],
   /*
   ** Nuxt.js dev-modules
   */
@@ -35,7 +38,7 @@ export default {
   /*
   ** Nuxt.js modules
   */
-  modules: ['@nuxtjs/style-resources'],
+  modules: ['@nuxtjs/style-resources', '@nuxtjs/axios'],
 
   styleResources: {
     scss: ['~/assets/css/common.scss']
@@ -56,5 +59,13 @@ export default {
     ** You can extend webpack config here
     */
     extend(config, ctx) {}
+  },
+
+  /*
+  ** env
+  */
+  env: {
+    API_KEY: apiKey,
+    CONSTANT: constant
   }
 }

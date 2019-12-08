@@ -1,18 +1,16 @@
 <template>
   <div class="main">
     <the-hero />
-    <the-coordinate-list />
+    aaa
   </div>
 </template>
 
 <script>
 import TheHero from '~/components/molecules/TheHero.vue'
-import TheCoordinateList from '~/components/organisms/TheCoordinateList.vue'
 
 export default {
   components: {
-    TheHero,
-    TheCoordinateList
+    TheHero
   }
 }
 </script>

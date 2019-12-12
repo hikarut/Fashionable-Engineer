@@ -11,8 +11,8 @@
             </div>
             <div class="card-content">
               <div class="content">
-                {{ item.description }}
-                <br>
+                <!-- {{ item.description }} -->
+                <!-- <br> -->
                 {{ convert(item.createdAt) }}
               </div>
             </div>

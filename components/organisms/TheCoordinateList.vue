@@ -13,7 +13,7 @@
               <div class="content">
                 {{ item.description }}
                 <br>
-                {{ item.date }}
+                {{ convert(item.createdAt) }}
               </div>
             </div>
           </div>
@@ -25,6 +25,8 @@
 </template>
 
 <script>
+import { dateString } from '~/lib/date'
+
 export default {
   components: {},
   props: {
@@ -32,53 +34,12 @@ export default {
       type: Array,
       default: null
     }
+  },
+  methods: {
+    convert(str) {
+      return dateString(str)
+    }
   }
-  /*
-  data: () => ({
-    items: [
-      {
-        title: 'コーディネート',
-        date: '2019/11/03',
-        label: 'info',
-        url: '/about',
-        img:
-          'https://images.microcms-assets.io/protected/ap-northeast-1:5e827ad7-e52f-4bf1-9d3f-774895e60b63/service/fashionableengineer/media/wear01.jpg'
-      },
-      {
-        title: 'コーディネート',
-        date: '2019/10/28',
-        label: 'info',
-        url: '/about',
-        img:
-          'https://images.microcms-assets.io/protected/ap-northeast-1:5e827ad7-e52f-4bf1-9d3f-774895e60b63/service/fashionableengineer/media/wear01.jpg'
-      },
-      {
-        title: 'コーディネート',
-        date: '2019/10/28',
-        label: 'info',
-        url: '/about',
-        img:
-          'https://images.microcms-assets.io/protected/ap-northeast-1:5e827ad7-e52f-4bf1-9d3f-774895e60b63/service/fashionableengineer/media/wear01.jpg'
-      },
-      {
-        title: 'コーディネート',
-        date: '2019/10/28',
-        label: 'info',
-        url: '/about',
-        img:
-          'https://images.microcms-assets.io/protected/ap-northeast-1:5e827ad7-e52f-4bf1-9d3f-774895e60b63/service/fashionableengineer/media/wear01.jpg'
-      },
-      {
-        title: 'コーディネート',
-        date: '2019/08/18',
-        label: 'info',
-        url: '/about',
-        img:
-          'https://images.microcms-assets.io/protected/ap-northeast-1:5e827ad7-e52f-4bf1-9d3f-774895e60b63/service/fashionableengineer/media/wear01.jpg'
-      }
-    ]
-  })
-  */
 }
 </script>
 

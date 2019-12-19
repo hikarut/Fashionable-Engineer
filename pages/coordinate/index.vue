@@ -1,27 +1,21 @@
 <template>
   <div class="main">
-    <the-hero />
-    aaa
+    <the-coordinate-list :items="items"/>
   </div>
 </template>
 
 <script>
-import TheHero from '~/components/molecules/TheHero.vue'
+import TheCoordinateList from '~/components/organisms/TheCoordinateList.vue'
+import { getData } from '~/plugins/cms'
 
 export default {
   components: {
-    TheHero
+    TheCoordinateList
   },
-  async asyncData({ $axios, params }) {
-    $axios.setHeader(process.env.CONSTANT.API_HEADER, process.env.API_KEY)
-    const result = await $axios.$get(process.env.CONSTANT.API_HOST_COORDINATE, {
-      params: {
-        limit: process.env.CONSTANT.API_PARAM_LIMIT
-      }
-    })
-    console.log(result)
+  async asyncData() {
+    const items = await getData()
     return {
-      result: result
+      items: items.data.contents
     }
   }
 }

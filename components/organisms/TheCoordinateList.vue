@@ -18,7 +18,6 @@
         </nuxt-link>
       </div>
     </div>
-    <button class="button is-fullwidth">もっと見る</button>
   </div>
 </template>
 
@@ -49,7 +48,7 @@ export default {
   width: 80%;
   margin: 0 auto;
   margin-top: 10%;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
 }
 .column-item p {
   margin-bottom: 30px;

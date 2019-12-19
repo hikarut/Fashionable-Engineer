@@ -12,7 +12,7 @@
         "test": "jest"
     },
     "dependencies": {
-        "@nuxtjs/axios": "^5.8.0",
+        "@nuxtjs/axios": "^5.9.0",
         "bulma": "^0.7.5",
         "nuxt": "^2.0.0"
     },

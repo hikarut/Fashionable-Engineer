@@ -2,28 +2,28 @@
   <div class="main">
     <the-hero />
     <the-coordinate-list :items="items"/>
+    <div class="more">
+      <button class="button is-fullwidth" @click="go('/coordinate')">もっと見る</button>
+    </div>
   </div>
 </template>
 
 <script>
 import TheHero from '~/components/molecules/TheHero.vue'
 import TheCoordinateList from '~/components/organisms/TheCoordinateList.vue'
+import { getData } from '~/plugins/cms'
+import method from '~/mixins/method'
 
 export default {
   components: {
     TheHero,
     TheCoordinateList
   },
-  async asyncData({ $axios, params }) {
-    $axios.setHeader(process.env.CONSTANT.API_HEADER, process.env.API_KEY)
-    const items = await $axios.$get(process.env.CONSTANT.API_HOST_COORDINATE, {
-      params: {
-        limit: process.env.CONSTANT.API_PARAM_LIMIT
-      }
-    })
-    console.log(items)
+  mixins: [method],
+  async asyncData() {
+    const items = await getData()
     return {
-      items: items.contents
+      items: items.data.contents
     }
   }
 }
@@ -32,5 +32,10 @@ export default {
 <style lang="scss" scoped>
 .main {
   color: $black;
+}
+.more {
+  width: 50%;
+  margin: auto;
+  margin-bottom: 50px;
 }
 </style>

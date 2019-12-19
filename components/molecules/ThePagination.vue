@@ -37,10 +37,19 @@ export default {
     }
   },
   data: () => ({
-    length: 3,
+    // length: 3,
     POST_PER_PAGE: constant.POST_PER_PAGE
   }),
   computed: {
+    length() {
+      const maxLength = 3
+      const totalPage = Math.ceil(this.total / constant.POST_PER_PAGE)
+      if (totalPage < maxLength) {
+        return totalPage
+      } else {
+        return maxLength
+      }
+    },
     totalPage() {
       return Math.ceil(this.total / constant.POST_PER_PAGE)
     },
@@ -76,7 +85,7 @@ export default {
   height: 40px;
   line-height: 40px;
   margin-bottom: 30px;
-  margin-right: 20px;
+  text-align: center;
 }
 .count {
   margin-bottom: 15px;

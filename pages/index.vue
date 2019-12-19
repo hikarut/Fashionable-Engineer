@@ -3,7 +3,7 @@
     <the-hero />
     <the-coordinate-list :items="items"/>
     <div class="more">
-      <button class="button is-fullwidth" @click="go('/coordinate')">もっと見る</button>
+      <button class="button is-fullwidth" @click="go('/coordinate/page/1')">もっと見る</button>
     </div>
   </div>
 </template>

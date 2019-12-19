@@ -6,7 +6,8 @@
           <div class="card">
             <div class="card-image">
               <figure class="image">
-                <img :src="item.img.url">
+                <!-- <img :src="item.img.url"> -->
+                <img v-lazy="item.img.url">
               </figure>
             </div>
             <div class="card-content">

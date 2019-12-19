@@ -5,18 +5,18 @@ const header = {
 }
 /*
  * トップ用のデータ取得
- * @params offset
+ * @params start
  * @params limit
  * @return items
  */
 export async function getData(
-  offset = 0,
+  start = 0,
   limit = process.env.CONSTANT.API_PARAM_LIMIT_TOP
 ) {
   const items = await axios
     .get(process.env.CONSTANT.API_HOST_COORDINATE, {
       params: {
-        offset: offset,
+        offset: start,
         limit: limit
       },
       headers: header

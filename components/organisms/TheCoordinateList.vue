@@ -38,8 +38,7 @@ export default {
       return dateString(str)
     },
     imageUrl(originUrl) {
-      const width = 300
-      return resizeImageUrl(originUrl, width)
+      return resizeImageUrl(originUrl, process.env.CONSTANT.LIST_IMAGE_WIDTH)
     }
   }
 }

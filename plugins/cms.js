@@ -3,6 +3,7 @@ import axios from 'axios'
 const header = {
   'X-API-KEY': process.env.API_KEY
 }
+
 /*
  * トップ用のデータ取得
  * @params start
@@ -27,4 +28,24 @@ export async function getData(
       return null
     })
   return items
+}
+
+/*
+ * 詳細データの取得
+ * @params type
+ * @params id
+ * @return item
+ */
+export async function getItem(type, id) {
+  const requestUrl = `${process.env.CONSTANT.API_HOST}/${type}/${id}`
+  const item = await axios
+    .get(requestUrl, {
+      headers: header
+    })
+    .catch(error => {
+      // TODO:エラーハンドリング
+      console.log('error')
+      return null
+    })
+  return item
 }

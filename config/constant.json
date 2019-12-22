@@ -1,5 +1,8 @@
 {
+  "API_HOST": "https://fashionableengineer.microcms.io/api/v1",
   "API_HOST_COORDINATE": "https://fashionableengineer.microcms.io/api/v1/coordinate",
   "API_PARAM_LIMIT_TOP": 9,
-  "POST_PER_PAGE": 12
+  "POST_PER_PAGE": 12,
+  "LIST_IMAGE_WIDTH": 300,
+  "ITEM_IMAGE_WIDTH": 400
 }

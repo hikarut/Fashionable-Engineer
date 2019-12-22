@@ -6,8 +6,7 @@
           <div class="card">
             <div class="card-image">
               <figure class="image">
-                <!-- <img :src="item.img.url"> -->
-                <img v-lazy="item.img.url">
+                <img v-lazy="imageUrl(item.img.url)">
               </figure>
             </div>
             <div class="card-content">
@@ -24,6 +23,7 @@
 
 <script>
 import { dateString } from '~/lib/date'
+import { resizeImageUrl } from '~/lib/url'
 
 export default {
   components: {},
@@ -36,6 +36,10 @@ export default {
   methods: {
     convert(str) {
       return dateString(str)
+    },
+    imageUrl(originUrl) {
+      const width = 300
+      return resizeImageUrl(originUrl, width)
     }
   }
 }

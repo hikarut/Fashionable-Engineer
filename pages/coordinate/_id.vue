@@ -27,7 +27,7 @@ export default {
       return dateString(str)
     },
     imageUrl(originUrl) {
-      return resizeImageUrl(originUrl, process.env.CONSTANT.ITEM_IMAGE_WIDTH)
+      return resizeImageUrl(originUrl, process.env.CONSTANT.IMAGE_WIDTH)
     }
   },
   async asyncData({ params }) {

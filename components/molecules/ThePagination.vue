@@ -1,5 +1,5 @@
 <template>
-  <div class="paging-main">
+  <div>
     <div class="count">
       {{ start }}件 〜 {{ end }}件 / {{ total }}件
     </div>
@@ -37,7 +37,6 @@ export default {
     }
   },
   data: () => ({
-    // length: 3,
     POST_PER_PAGE: constant.POST_PER_PAGE
   }),
   computed: {
@@ -77,10 +76,6 @@ export default {
 </script>
 
 <style scoped>
-.paging-main {
-  width: 50%;
-  margin: auto;
-}
 .paging {
   height: 40px;
   line-height: 40px;

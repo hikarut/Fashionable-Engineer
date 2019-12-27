@@ -51,7 +51,7 @@ export default {
 .column-item {
   width: 80%;
   margin: 0 auto;
-  margin-top: 10%;
+  margin-top: 5%;
   margin-bottom: 5%;
 }
 .column-item p {

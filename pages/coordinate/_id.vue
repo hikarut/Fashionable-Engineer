@@ -42,11 +42,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// PC版は幅を小さくする
+// PC版はレイアウト調整する
 @media screen and (min-width: 860px) {
   .contents {
     width: 80%;
-    margin: 0 auto 30px;
+    margin: 10px auto 30px;
   }
   .image {
     width: 400px;

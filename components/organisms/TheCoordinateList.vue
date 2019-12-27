@@ -11,7 +11,9 @@
             </div>
             <div class="card-content">
               <div class="content center-text">
-                {{ convert(item.createdAt) }}
+                <the-weather-icon :weather="item.weather" />
+                <the-temperature :temperature="item.temperature" />
+                <span class="date">{{ convert(item.createdAt) }}</span>
               </div>
             </div>
           </div>
@@ -22,11 +24,16 @@
 </template>
 
 <script>
+import TheWeatherIcon from '~/components/atoms/TheWeatherIcon.vue'
+import TheTemperature from '~/components/atoms/TheTemperature.vue'
 import { dateString } from '~/lib/date'
 import { resizeImageUrl } from '~/lib/url'
 
 export default {
-  components: {},
+  components: {
+    TheWeatherIcon,
+    TheTemperature
+  },
   props: {
     items: {
       type: Array,
@@ -66,5 +73,8 @@ export default {
     height: 360px;
     object-fit: cover;
   }
+}
+.date {
+  font-size: 12px;
 }
 </style>

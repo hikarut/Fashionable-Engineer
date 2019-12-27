@@ -1,5 +1,5 @@
 <template>
-  <span>{{ temperature }}°</span>
+  <span class="size">{{ temperature }}°</span>
 </template>
 
 <script>
@@ -14,4 +14,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.size {
+  font-size: 20px;
+  font-weight: bold;
+}
 </style>

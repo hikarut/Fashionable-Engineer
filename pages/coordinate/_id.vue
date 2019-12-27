@@ -7,8 +7,9 @@
         </figure>
       </div>
       <div class="column">
-        <p>{{ convert(item.createdAt) }}</p>
-        <p>{{ item.weather }}:{{ item.temperature }}°</p>
+        <the-weather-icon :weather="item.weather" />
+        <the-temperature :temperature="item.temperature" />
+        <span>{{ convert(item.createdAt) }}</span>
         <p class="description" v-html="item.description" />
       </div>
     </div>
@@ -18,12 +19,16 @@
       <div v-for="(name, j) in wear"
            v-if="item[name] !== null"
            :key="j"
-           class="column is-one-third">
-        <figure class="wear-image">
-          <img v-lazy="imageUrl(item[name].img.url)">
-        </figure>
-        <p class="wear-brand center-text">{{ item[name].brand }}</p>
-        <p class="wear-name center-text">{{ item[name].name }}</p>
+           class="column is-one-third card-column">
+        <div class="card">
+          <div class="card-content">
+            <figure class="wear-image">
+              <img v-lazy="imageUrl(item[name].img.url)">
+            </figure>
+            <p class="wear-brand center-text">{{ item[name].brand }}</p>
+            <p class="wear-name center-text">{{ item[name].name }}</p>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -31,12 +36,17 @@
 </template>
 
 <script>
+import TheWeatherIcon from '~/components/atoms/TheWeatherIcon.vue'
+import TheTemperature from '~/components/atoms/TheTemperature.vue'
 import { dateString } from '~/lib/date'
 import { getItem } from '~/plugins/cms'
 import { resizeImageUrl } from '~/lib/url'
 
 export default {
-  components: {},
+  components: {
+    TheWeatherIcon,
+    TheTemperature
+  },
   data: () => ({
     wear: process.env.CONSTANT.ITEM_LIST
   }),
@@ -60,26 +70,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// PC版はレイアウト調整する
-@media screen and (min-width: 860px) {
-  .contents {
-    width: 80%;
-    margin: 10px auto 30px;
-  }
-  .image {
-    width: 400px;
-    margin: auto;
-  }
-  .wear-image {
-    width: 150px;
-    margin: auto;
-  }
-}
 // 上書き
 .columns {
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
+  padding: 0.5rem;
 }
 .description {
   margin-top: 20px;
@@ -97,5 +93,26 @@ export default {
 }
 .wear-items {
   margin-bottom: 30px;
+}
+.card-content {
+  padding: 0.3rem;
+}
+.card-column {
+  padding: 0.3rem;
+}
+// PC版はレイアウト調整する
+@media screen and (min-width: 860px) {
+  .contents {
+    width: 80%;
+    margin: 10px auto 30px;
+  }
+  .image {
+    width: 400px;
+    margin: auto;
+  }
+  .wear-image {
+    width: 150px;
+    margin: auto;
+  }
 }
 </style>

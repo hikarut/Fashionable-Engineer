@@ -18,11 +18,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.fas {
+  font-size: 20px;
+}
 .fa-sun {
   color: $sun;
 }
 .fa-cloud {
-  color: $cloud;
+  // color: $cloud;
 }
 .fa-umbrella {
   color: $rain;

@@ -10,7 +10,7 @@
               </figure>
             </div>
             <div class="card-content">
-              <div class="content center-text">
+              <div class="center-text">
                 <the-weather-icon :weather="item.weather" />
                 <the-temperature :temperature="item.temperature" />
                 <span class="date">{{ convert(item.createdAt) }}</span>
@@ -75,6 +75,6 @@ export default {
   }
 }
 .date {
-  font-size: 12px;
+  font-size: 13px;
 }
 </style>

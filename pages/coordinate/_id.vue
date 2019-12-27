@@ -11,6 +11,7 @@
         <the-temperature :temperature="item.temperature" />
         <span>{{ convert(item.createdAt) }}</span>
         <p class="description" v-html="item.description" />
+        <the-model />
       </div>
     </div>
 
@@ -38,6 +39,7 @@
 <script>
 import TheWeatherIcon from '~/components/atoms/TheWeatherIcon.vue'
 import TheTemperature from '~/components/atoms/TheTemperature.vue'
+import TheModel from '~/components/atoms/TheModel.vue'
 import { dateString } from '~/lib/date'
 import { getItem } from '~/plugins/cms'
 import { resizeImageUrl } from '~/lib/url'
@@ -45,7 +47,8 @@ import { resizeImageUrl } from '~/lib/url'
 export default {
   components: {
     TheWeatherIcon,
-    TheTemperature
+    TheTemperature,
+    TheModel
   },
   data: () => ({
     wear: process.env.CONSTANT.ITEM_LIST

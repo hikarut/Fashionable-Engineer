@@ -59,4 +59,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.navbar-brand {
+  border-bottom: 1px solid $gray;
+}
 </style>

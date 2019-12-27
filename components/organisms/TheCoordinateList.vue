@@ -10,7 +10,7 @@
               </figure>
             </div>
             <div class="card-content">
-              <div class="content">
+              <div class="content center-text">
                 {{ convert(item.createdAt) }}
               </div>
             </div>
@@ -60,5 +60,11 @@ export default {
 .image img {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+}
+@media screen and (min-width: 769px) {
+  .image img {
+    height: 360px;
+    object-fit: cover;
+  }
 }
 </style>

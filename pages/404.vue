@@ -1,7 +1,7 @@
 <template>
   <section class="hero is-medium">
     <div class="hero-body">
-      <div class="container">
+      <div class="container center-text">
         <h1>
           エラーです。
         </h1>
@@ -22,7 +22,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
-  text-align: center;
-}
 </style>

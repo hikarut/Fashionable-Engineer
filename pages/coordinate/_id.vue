@@ -21,15 +21,22 @@
            v-if="item[name] !== null"
            :key="j"
            class="column is-one-third card-column">
-        <div class="card">
-          <div class="card-content">
-            <figure class="wear-image">
-              <img v-lazy="imageUrl(item[name].img.url)">
-            </figure>
-            <p class="wear-brand center-text">{{ item[name].brand }}</p>
-            <p class="wear-name center-text">{{ item[name].name }}</p>
-          </div>
-        </div>
+        <template v-if="Array.isArray(item[name])">
+          配列の場合
+        </template>
+        <template v-else>
+          <nuxt-link :to="`/item/${name}/${item[name].id}`">
+            <div class="card">
+              <div class="card-content">
+                <figure class="wear-image">
+                  <img v-lazy="imageUrl(item[name].img.url)">
+                </figure>
+                <p class="wear-brand center-text">{{ item[name].brand }}</p>
+                <p class="wear-name center-text">{{ item[name].name }}</p>
+              </div>
+            </div>
+          </nuxt-link>
+        </template>
       </div>
     </div>
 

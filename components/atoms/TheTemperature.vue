@@ -6,8 +6,8 @@
 export default {
   props: {
     temperature: {
-      type: String,
-      default: ''
+      type: Number,
+      default: null
     }
   }
 }

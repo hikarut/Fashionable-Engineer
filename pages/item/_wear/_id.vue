@@ -7,7 +7,7 @@
         </figure>
       </div>
       <div class="column">
-        <span>{{ convert(item.createdAt) }}</span>
+        <!-- <span>{{ convert(item.createdAt) }}</span> -->
         <p>{{ item.name }}</p>
         <p>{{ item.brand }}</p>
         <p class="description" v-html="item.description" />

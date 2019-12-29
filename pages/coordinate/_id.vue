@@ -18,25 +18,13 @@
     <h3 class="subtitle is-5 center-text">着用アイテム</h3>
     <div class="columns is-mobile is-multiline wear-items">
       <div v-for="(name, j) in wear"
-           v-if="item[name] !== null"
            :key="j"
            class="column is-one-third card-column">
-        <template v-if="Array.isArray(item[name])">
-          配列の場合
-        </template>
-        <template v-else>
-          <nuxt-link :to="`/item/${name}/${item[name].id}`">
-            <div class="card">
-              <div class="card-content">
-                <figure class="wear-image">
-                  <img v-lazy="imageUrl(item[name].img.url)">
-                </figure>
-                <p class="wear-brand center-text">{{ item[name].brand }}</p>
-                <p class="wear-name center-text">{{ item[name].name }}</p>
-              </div>
-            </div>
-          </nuxt-link>
-        </template>
+        <nuxt-link :to="`/item/${name.path}/${name.id}`">
+          <the-item :img="imageUrl(name.img.url)"
+                    :brand="name.brand"
+                    :name="name.name" />
+        </nuxt-link>
       </div>
     </div>
 
@@ -46,6 +34,7 @@
 <script>
 import TheWeatherIcon from '~/components/atoms/TheWeatherIcon.vue'
 import TheTemperature from '~/components/atoms/TheTemperature.vue'
+import TheItem from '~/components/molecules/TheItem.vue'
 import TheModel from '~/components/atoms/TheModel.vue'
 import { dateString } from '~/lib/date'
 import { getItem } from '~/plugins/cms'
@@ -55,11 +44,9 @@ export default {
   components: {
     TheWeatherIcon,
     TheTemperature,
+    TheItem,
     TheModel
   },
-  data: () => ({
-    wear: process.env.CONSTANT.ITEM_LIST
-  }),
   methods: {
     convert(str) {
       return dateString(str)
@@ -70,10 +57,30 @@ export default {
   },
   async asyncData({ params }) {
     const item = await getItem('coordinate', params.id)
-    console.log(item)
+    // console.log(item)
+    const itemName = process.env.CONSTANT.ITEM_LIST
+    let wear = []
+    itemName.forEach(k => {
+      // 配列の場合
+      if (Array.isArray(item.data[k])) {
+        const itemArray = item.data[k]
+        itemArray.forEach(j => {
+          // APIリクエスト用のパスを追加
+          j['path'] = k
+          wear.push(j)
+        })
+        // それ以外は空以外なら追加
+      } else if (item.data[k] !== null) {
+        // APIリクエスト用のパスを追加
+        item.data[k]['path'] = k
+        wear.push(item.data[k])
+      }
+    })
+    console.log(wear)
     return {
       id: params.id,
-      item: item.data
+      item: item.data,
+      wear: wear
     }
   }
 }
@@ -91,22 +98,6 @@ export default {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.wear-image {
-  width: 100px;
-  margin: auto;
-}
-.wear-brand {
-  font-size: 10px;
-}
-.wear-name {
-  font-size: 8px;
-}
-.wear-items {
-  margin-bottom: 30px;
-}
-.card-content {
-  padding: 0.3rem;
-}
 .card-column {
   padding: 0.3rem;
 }
@@ -118,10 +109,6 @@ export default {
   }
   .image {
     width: 400px;
-    margin: auto;
-  }
-  .wear-image {
-    width: 150px;
     margin: auto;
   }
 }

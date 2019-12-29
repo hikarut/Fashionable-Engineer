@@ -4,5 +4,5 @@
   "API_PARAM_LIMIT_TOP": 9,
   "POST_PER_PAGE": 12,
   "IMAGE_WIDTH": 500,
-  "ITEM_LIST": ["shoes","shoes","shoes","shoes","socks", "bottoms", "tops", "bag", "watch", "cap","accessory"]
+  "ITEM_LIST": ["shoes","socks", "bottoms", "tops", "bag", "watch", "cap","accessory"]
 }

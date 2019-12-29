@@ -75,7 +75,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .paging {
   height: 40px;
   line-height: 40px;

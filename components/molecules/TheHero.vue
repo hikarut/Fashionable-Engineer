@@ -2,8 +2,7 @@
   <div class="bg-image">
     <div class="bg-mask">
       <h1 class="title is-2">
-        <p class="bg-text">エンジニアもおしゃれに</p>
-        <p class="bg-text-sub">エンジニアの日々のコーディネートを投稿します</p>
+        <p class="bg-text">エンジニアの日々のコーディネートを</p>
       </h1>
     </div>
   </div>
@@ -26,27 +25,16 @@ export default {}
 }
 .bg-text {
   color: $white;
-  line-height: 3.5rem;
-  padding-top: 120px;
-  width: 90%;
-  margin: 0 auto;
-  text-align: center;
-}
-.bg-text-sub {
-  color: $white;
   line-height: 1.5rem;
   padding-top: 120px;
   width: 90%;
   margin: 0 auto;
   text-align: center;
-  font-size: 18px;
+  font-size: 30px;
 }
 @media screen and (max-width: 400px) {
   .bg-text {
-    font-size: 30px;
-  }
-  .bg-text-sub {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 </style>

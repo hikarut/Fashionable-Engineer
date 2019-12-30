@@ -26,7 +26,7 @@ export default {}
 .bg-text {
   color: $white;
   line-height: 1.5rem;
-  padding-top: 120px;
+  padding-top: 150px;
   width: 90%;
   margin: 0 auto;
   text-align: center;

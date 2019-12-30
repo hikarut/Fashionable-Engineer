@@ -1,8 +1,11 @@
 <template>
-  <div class="main">
-    <the-hero />
-    aaa
-  </div>
+  <section class="hero is-medium is-bold">
+    <div class="hero-body">
+      <div class="container center-text">
+        Comming Soon...
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -16,7 +19,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.main {
-  color: $black;
-}
 </style>

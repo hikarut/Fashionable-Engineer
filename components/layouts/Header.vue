@@ -30,11 +30,11 @@
           items
         </nuxt-link>
 
-        <nuxt-link class="navbar-item" to="about">
+        <nuxt-link class="navbar-item" to="/about">
           about
         </nuxt-link>
 
-        <nuxt-link class="navbar-item" to="contact">
+        <nuxt-link class="navbar-item" to="/contact">
           contact
         </nuxt-link>
 

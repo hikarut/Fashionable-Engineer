@@ -1,5 +1,10 @@
 const apiKey = process.env.API_KEY || 'apiKey'
 const constant = require('./config/constant.json')
+const defaultTitle = 'Fashionable Engineer'
+const defaultKeyword =
+  'エンジニア,ファッション,コーディネート,おしゃれ,天気,気温,ファッショナブルエンジニア'
+const defaultDescription =
+  'エンジニアの日々のコーディネートを投稿します。その日の天気と気温も合わせて載せているので季節感の参考にして頂ければと思います。'
 
 export default {
   mode: 'universal',
@@ -7,14 +12,31 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: process.env.npm_package_name || '',
+    title: defaultTitle,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'keywords', name: 'keywords', content: defaultKeyword },
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
+        content: defaultDescription
+      },
+      {
+        hid: 'og:description',
+        name: 'og:description',
+        content: defaultDescription
+      },
+      { hid: 'og:image', property: 'og:image', content: '/ogimage.png' },
+      {
+        hid: 'twitter:card',
+        property: 'twitter:card',
+        content: 'summary_large_image'
+      },
+      {
+        hid: 'twitter:image:src',
+        property: 'twitter:image:src',
+        content: `/ogimage.png`
       }
     ],
     link: [

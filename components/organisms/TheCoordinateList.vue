@@ -1,7 +1,7 @@
 <template>
-  <div class="column-item">
-    <div class="columns is-multiline">
-      <div v-for="(item, i) in items" :key="i" class="column is-one-third">
+  <div class="main">
+    <div class="columns is-multiline is-mobile">
+      <div v-for="(item, i) in items" :key="i" class="column is-one-third-desktop is-one-third-tablet is-half-mobile">
         <nuxt-link :to="`/coordinate/${item.id}`">
           <div class="card">
             <div class="card-image">
@@ -42,7 +42,8 @@ export default {
   },
   methods: {
     convert(str) {
-      return dateString(str)
+      const detail = false
+      return dateString(str, detail)
     },
     imageUrl(originUrl) {
       return resizeImageUrl(originUrl, process.env.CONSTANT.IMAGE_WIDTH)
@@ -55,19 +56,42 @@ export default {
 .card {
   border-radius: 10px;
 }
-.column-item {
+.main {
   width: 80%;
   margin: 0 auto;
   margin-top: 5%;
   margin-bottom: 5%;
 }
-.column-item p {
+.main p {
   margin-bottom: 30px;
 }
 .image img {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
+// スマホ
+@media screen and (max-width: 769px) {
+  .main {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  .image img {
+    height: 270px;
+    object-fit: cover;
+  }
+}
+// スマホでさらに小さい時
+@media screen and (max-width: 769px) {
+  .main {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+}
+// PC
 @media screen and (min-width: 769px) {
   .image img {
     height: 360px;
@@ -76,5 +100,8 @@ export default {
 }
 .date {
   font-size: 13px;
+}
+.card-content {
+  padding: 0.5rem;
 }
 </style>

@@ -2,7 +2,7 @@ const apiKey = process.env.API_KEY || 'apiKey'
 const constant = require('./config/constant.json')
 const defaultTitle = 'Fashionable Engineer'
 const defaultKeyword =
-  'エンジニア,ファッション,コーディネート,おしゃれ,天気,気温,ファッショナブルエンジニア'
+  'エンジニア,ファッション,コーディネート,服装,おしゃれ,天気,気温,ファッショナブルエンジニア'
 const defaultDescription =
   'エンジニアの日々のコーディネートを投稿します。その日の天気と気温も合わせて載せているので季節感の参考にして頂ければと思います。'
 

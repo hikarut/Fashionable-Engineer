@@ -1,11 +1,15 @@
 const environment = process.env.NODE_ENV || 'dev'
 const apiKey = process.env.API_KEY || 'apiKey'
 const constant = require('./config/constant.json')
+
+const defaultUrl = 'https://fashionable-engineer.org/'
 const defaultTitle = 'Fashionable Engineer'
 const defaultKeyword =
   'エンジニア,ファッション,コーディネート,服装,おしゃれ,天気,気温,ファッショナブルエンジニア'
 const defaultDescription =
   'エンジニアの日々のコーディネートを投稿します。その日の天気と気温も合わせて載せているので季節感の参考にして頂ければと思います。'
+// 「ホーム画面に追加」したときのアプリケーション名
+const applicationName = 'Fashionable Engineer'
 
 export default {
   mode: 'universal',
@@ -28,7 +32,15 @@ export default {
         name: 'og:description',
         content: defaultDescription
       },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
       { hid: 'og:image', property: 'og:image', content: '/ogimage.png' },
+      { hid: 'og:title', property: 'og:title', content: defaultTitle },
+      { hid: 'og:url', property: 'og:url', content: defaultUrl },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: defaultDescription
+      },
       {
         hid: 'twitter:card',
         property: 'twitter:card',
@@ -38,6 +50,14 @@ export default {
         hid: 'twitter:image:src',
         property: 'twitter:image:src',
         content: `/ogimage.png`
+      },
+      {
+        name: 'application-name',
+        content: applicationName
+      },
+      {
+        name: 'apple-mobile-web-app-title',
+        content: applicationName
       }
     ],
     link: [

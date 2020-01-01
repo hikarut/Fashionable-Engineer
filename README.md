@@ -1,22 +1,9 @@
-# fashionable-engineer
+<img src="https://fashionable-engineer.org/ogimage.png">
 
-> fashionable-engineer
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1ba44ebe-9109-430f-9e2d-2a6e71ad3e8b/deploy-status)](https://app.netlify.com/sites/fashionable-engineer/deploys)
 
-## Build Setup
+## Fashionable Engineer
+「Fashionable Engineer」はエンジニアの日々のコーディネートを投稿します。
+その日の天気と気温も合わせて載せているので季節感の参考にして頂ければと思います。
+https://fashionable-engineer.org/
 
-``` bash
-# install dependencies
-$ npm run install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).

@@ -5,16 +5,21 @@
     "author": "hikarut",
     "private": true,
     "scripts": {
-        "dev": "nuxt",
+        "dev": "cross-env NODE_ENV='dev' nuxt",
+        "preview": "cross-env NODE_ENV='preview' nuxt",
+        "prod": "cross-env NODE_ENV='prod' nuxt",
         "build": "nuxt build",
         "start": "nuxt start",
-        "generate": "nuxt generate",
+        "generate:dev": "cross-env NODE_ENV='dev' nuxt generate",
+        "generate:preview": "cross-env NODE_ENV='preview' nuxt generate",
+        "generate:prod": "cross-env NODE_ENV='prod' nuxt generate",
         "test": "jest"
     },
     "dependencies": {
         "@nuxtjs/axios": "^5.9.0",
         "bulma": "^0.7.5",
-        "nuxt": "^2.0.0"
+        "nuxt": "^2.0.0",
+        "cross-env": "^6.0.3"
     },
     "devDependencies": {
         "@babel/core": "^7.0.0",

@@ -1,3 +1,4 @@
+const environment = process.env.NODE_ENV || 'dev'
 const apiKey = process.env.API_KEY || 'apiKey'
 const constant = require('./config/constant.json')
 const defaultTitle = 'Fashionable Engineer'
@@ -59,7 +60,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '~/plugins/axios.js' },
+    { src: '~/plugins/ga.js', mode: 'client' },
     { src: '~/plugins/lazyload.js', mode: 'client' }
   ],
   /*
@@ -96,6 +97,7 @@ export default {
   ** env
   */
   env: {
+    ENVIRONMENT: environment,
     API_KEY: apiKey,
     CONSTANT: constant
   }

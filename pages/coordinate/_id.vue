@@ -57,7 +57,6 @@ export default {
   },
   async asyncData({ params }) {
     const item = await getItem('coordinate', params.id)
-    // console.log(item)
     const itemName = process.env.CONSTANT.ITEM_LIST
     let wear = []
     itemName.forEach(k => {
@@ -76,7 +75,6 @@ export default {
         wear.push(item.data[k])
       }
     })
-    console.log(wear)
     return {
       id: params.id,
       item: item.data,

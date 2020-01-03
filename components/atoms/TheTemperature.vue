@@ -15,7 +15,7 @@ export default {
 
 <style lang="scss" scoped>
 .size {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: bold;
 }
 </style>

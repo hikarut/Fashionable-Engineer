@@ -27,11 +27,6 @@ export default {
         name: 'description',
         content: defaultDescription
       },
-      {
-        hid: 'og:description',
-        name: 'og:description',
-        content: defaultDescription
-      },
       { hid: 'og:type', property: 'og:type', content: 'website' },
       { hid: 'og:image', property: 'og:image', content: '/ogimage.png' },
       { hid: 'og:title', property: 'og:title', content: defaultTitle },
@@ -49,7 +44,7 @@ export default {
       {
         hid: 'twitter:image:src',
         property: 'twitter:image:src',
-        content: `/ogimage.png`
+        content: `${defaultUrl}ogimage.png`
       },
       {
         name: 'application-name',

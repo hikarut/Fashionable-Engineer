@@ -26,8 +26,8 @@
           coordinate
         </nuxt-link>
 
-        <nuxt-link class="navbar-item" to="/items">
-          items
+        <nuxt-link class="navbar-item" to="/item">
+          item
         </nuxt-link>
 
         <nuxt-link class="navbar-item" to="/about">

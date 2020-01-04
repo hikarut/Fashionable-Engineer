@@ -1,6 +1,8 @@
 const environment = process.env.NODE_ENV || 'dev'
 const apiKey = process.env.API_KEY || 'apiKey'
-const constant = require('./config/constant.json')
+// const constant = require('./config/constant.json')
+import constant from './config/constant.json'
+import { getAllPath } from './plugins/cms'
 
 const defaultUrl = 'https://fashionable-engineer.org/'
 const defaultTitle = 'Fashionable Engineer'
@@ -85,7 +87,7 @@ export default {
   /*
   ** Nuxt.js modules
   */
-  modules: ['@nuxtjs/style-resources', '@nuxtjs/axios'],
+  modules: ['@nuxtjs/style-resources', '@nuxtjs/axios', '@nuxtjs/sitemap'],
 
   styleResources: {
     scss: ['~/assets/css/common.scss']
@@ -115,5 +117,19 @@ export default {
     ENVIRONMENT: environment,
     API_KEY: apiKey,
     CONSTANT: constant
+  },
+
+  /*
+  ** sitemap作成オプション
+  */
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: defaultUrl,
+    generate: true,
+    exclude: ['/contact'],
+    routes() {
+      console.log(getAllPath())
+      return getAllPath()
+    }
   }
 }

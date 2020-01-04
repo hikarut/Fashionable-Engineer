@@ -17,9 +17,10 @@
     },
     "dependencies": {
         "@nuxtjs/axios": "^5.9.0",
+        "@nuxtjs/sitemap": "^2.0.1",
         "bulma": "^0.7.5",
-        "nuxt": "^2.0.0",
-        "cross-env": "^6.0.3"
+        "cross-env": "^6.0.3",
+        "nuxt": "^2.0.0"
     },
     "devDependencies": {
         "@babel/core": "^7.0.0",

@@ -126,7 +126,7 @@ export default {
     path: '/sitemap.xml',
     hostname: defaultUrl,
     generate: true,
-    exclude: ['/contact'],
+    exclude: ['/contact', '/404'],
     routes() {
       console.log(getAllPath())
       return getAllPath()

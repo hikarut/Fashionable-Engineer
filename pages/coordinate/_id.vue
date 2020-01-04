@@ -99,6 +99,9 @@ export default {
 .card-column {
   padding: 0.3rem;
 }
+.wear-items {
+  margin-bottom: 20px;
+}
 // PC版はレイアウト調整する
 @media screen and (min-width: 860px) {
   .contents {

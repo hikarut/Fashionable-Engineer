@@ -54,4 +54,8 @@ export default {
     margin: auto;
   }
 }
+// ボックスの線を消す
+.card {
+  box-shadow: none;
+}
 </style>

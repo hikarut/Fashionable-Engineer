@@ -54,6 +54,8 @@ export default {
 .description {
   margin-top: 20px;
   margin-bottom: 20px;
+  // URLなどの長い文字を折り返す
+  word-wrap: break-word;
 }
 // PC版はレイアウト調整する
 @media screen and (min-width: 860px) {

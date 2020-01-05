@@ -128,7 +128,6 @@ export default {
     generate: true,
     exclude: ['/contact', '/404'],
     routes() {
-      console.log(getAllPath())
       return getAllPath()
     }
   }

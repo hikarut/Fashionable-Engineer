@@ -25,6 +25,20 @@ import { resizeImageUrl } from '~/lib/url'
 
 export default {
   components: {},
+  head() {
+    return {
+      title: `${this.item.name} | ${this.item.brand}`,
+      meta: [
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: `${this.item.name} ${
+            this.item.brand
+          } ￥${this.item.price.toLocaleString()} ${this.item.size}`
+        }
+      ]
+    }
+  },
   methods: {
     convert(str) {
       return dateString(str)

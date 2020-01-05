@@ -9,7 +9,7 @@
       <div class="column">
         <the-weather-icon :weather="item.weather" />
         <the-temperature :temperature="item.temperature" />
-        <span>{{ convert(item.createdAt) }}</span>
+        <span class="date">{{ convert(item.createdAt, true) }}</span>
         <p class="description" v-html="item.description" />
         <the-model />
       </div>
@@ -47,9 +47,23 @@ export default {
     TheItem,
     TheModel
   },
+  head() {
+    return {
+      title: `${this.convert(this.item.createdAt, false)}のコーディネート`,
+      meta: [
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: `エンジニア コーディネート ${this.item.weather} ${
+            this.item.temperature
+          }°`
+        }
+      ]
+    }
+  },
   methods: {
-    convert(str) {
-      return dateString(str)
+    convert(str, detail) {
+      return dateString(str, detail)
     },
     imageUrl(originUrl) {
       return resizeImageUrl(originUrl, process.env.CONSTANT.IMAGE_WIDTH)
@@ -101,6 +115,9 @@ export default {
 }
 .wear-items {
   margin-bottom: 20px;
+}
+.date {
+  font-size: 13px;
 }
 // PC版はレイアウト調整する
 @media screen and (min-width: 860px) {

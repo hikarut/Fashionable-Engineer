@@ -120,6 +120,15 @@ export default {
   },
 
   /*
+  ** generateオプション
+  */
+  generate: {
+    async routes() {
+      return getAllPath()
+    }
+  },
+
+  /*
   ** sitemap作成オプション
   */
   sitemap: {

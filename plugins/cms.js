@@ -78,6 +78,13 @@ export async function getAllPath() {
     allPath.push(`${constant.API_PATH_COORDINATE}/${data.id}`)
   })
 
+  // 検索ページング
+  const page = Math.ceil(items.data.totalCount / constant.POST_PER_PAGE)
+  const pageArray = [...Array(page).keys()]
+  pageArray.forEach(number => {
+    allPath.push(`/coordinate/page/${number + 1}`)
+  })
+
   // itemデータを取得
   const itemName = constant.ITEM_LIST
   itemName.forEach(name => {

@@ -57,6 +57,21 @@ export default {
           content: `エンジニア コーディネート ${this.item.weather} ${
             this.item.temperature
           }°`
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: `${process.env.CONSTANT.URL}${this.$route.path}`
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: `${this.convert(this.item.createdAt, false)}のコーディネート`
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: this.imageUrl(this.item.img.url)
         }
       ]
     }

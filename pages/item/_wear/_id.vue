@@ -35,6 +35,21 @@ export default {
           content: `${this.item.name} ${
             this.item.brand
           } ￥${this.item.price.toLocaleString()} ${this.item.size}`
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: `${process.env.CONSTANT.URL}${this.$route.path}`
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: `${this.item.name} | ${this.item.brand}`
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: this.imageUrl(this.item.img.url)
         }
       ]
     }

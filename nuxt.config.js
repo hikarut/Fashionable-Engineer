@@ -1,17 +1,7 @@
 const environment = process.env.NODE_ENV || 'dev'
 const apiKey = process.env.API_KEY || 'apiKey'
-// const constant = require('./config/constant.json')
 import constant from './config/constant.json'
 import { getAllPath } from './plugins/cms'
-
-const defaultUrl = 'https://fashionable-engineer.org/'
-const defaultTitle = 'Fashionable Engineer'
-const defaultKeyword =
-  'エンジニア,ファッション,コーディネート,服装,おしゃれ,天気,気温,ファッショナブルエンジニア'
-const defaultDescription =
-  'エンジニアの日々のコーディネートを投稿します。その日の天気と気温も合わせて載せているので季節感の参考にして頂ければと思います。'
-// 「ホーム画面に追加」したときのアプリケーション名
-const applicationName = 'Fashionable Engineer'
 
 export default {
   mode: 'universal',
@@ -19,24 +9,28 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: defaultTitle,
+    title: constant.TITLE,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'keywords', name: 'keywords', content: defaultKeyword },
+      { hid: 'keywords', name: 'keywords', content: constant.KEYWORD },
       {
         hid: 'description',
         name: 'description',
-        content: defaultDescription
+        content: constant.DESCRIPTION
       },
       { hid: 'og:type', property: 'og:type', content: 'website' },
-      { hid: 'og:image', property: 'og:image', content: '/ogimage.png' },
-      { hid: 'og:title', property: 'og:title', content: defaultTitle },
-      { hid: 'og:url', property: 'og:url', content: defaultUrl },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: `${constant.URL}/ogimage.png`
+      },
+      { hid: 'og:title', property: 'og:title', content: constant.TITLE },
+      { hid: 'og:url', property: 'og:url', content: constant.URL },
       {
         hid: 'og:description',
         property: 'og:description',
-        content: defaultDescription
+        content: constant.DESCRIPTION
       },
       {
         hid: 'twitter:card',
@@ -46,15 +40,15 @@ export default {
       {
         hid: 'twitter:image:src',
         property: 'twitter:image:src',
-        content: `${defaultUrl}ogimage.png`
+        content: `${constant.URL}/ogimage.png`
       },
       {
         name: 'application-name',
-        content: applicationName
+        content: constant.APPLICATION_NAME
       },
       {
         name: 'apple-mobile-web-app-title',
-        content: applicationName
+        content: constant.APPLICATION_NAME
       }
     ],
     link: [
@@ -133,7 +127,7 @@ export default {
   */
   sitemap: {
     path: '/sitemap.xml',
-    hostname: defaultUrl,
+    hostname: constant.URL,
     generate: true,
     exclude: ['/contact', '/404'],
     routes() {

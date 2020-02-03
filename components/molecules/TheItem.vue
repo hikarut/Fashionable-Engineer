@@ -32,8 +32,8 @@ export default {
 
 <style lang="scss" scoped>
 .wear-image {
-  width: 100px;
-  margin: auto;
+  // width: 100px;
+  // margin: auto;
 }
 .wear-brand {
   font-size: 10px;
@@ -50,8 +50,8 @@ export default {
 // PC版はレイアウト調整する
 @media screen and (min-width: 860px) {
   .wear-image {
-    width: 150px;
-    margin: auto;
+    // width: 150px;
+    // margin: auto;
   }
 }
 // ボックスの線を消す

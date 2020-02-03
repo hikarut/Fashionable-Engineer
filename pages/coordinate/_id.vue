@@ -16,10 +16,10 @@
     </div>
 
     <h3 class="subtitle is-5 center-text">着用アイテム</h3>
-    <div class="columns is-mobile is-multiline wear-items">
+    <div class="columns is-mobile is-multiline wear-items is-gapless">
       <div v-for="(name, j) in wear"
            :key="j"
-           class="column is-one-third card-column">
+           class="column is-one-quarter-desktop is-one-third-mobile card-column">
         <nuxt-link :to="`/item/${name.path}/${name.id}`">
           <the-item :img="imageUrl(name.img.url)"
                     :brand="name.brand"
@@ -57,6 +57,16 @@ export default {
           content: `エンジニア,コーディネート,${this.item.weather},${
             this.item.temperature
           }°,${this.wearItemName},${this.brandName}`
+        },
+        {
+          hid: 'description',
+          name: 'description',
+          content: `${this.convert(this.item.createdAt, false)}のコーディネート`
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: `${this.convert(this.item.createdAt, false)}のコーディネート`
         },
         {
           hid: 'og:url',

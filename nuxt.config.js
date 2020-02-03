@@ -38,11 +38,6 @@ export default {
         content: 'summary_large_image'
       },
       {
-        hid: 'twitter:image:src',
-        property: 'twitter:image:src',
-        content: `${constant.URL}/ogimage.png`
-      },
-      {
         name: 'application-name',
         content: constant.APPLICATION_NAME
       },

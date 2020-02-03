@@ -15,6 +15,21 @@
       </div>
     </div>
 
+    <template v-if="item.coordinate.length !== 0">
+      <h3 class="subtitle is-5 center-text">このアイテムを使ったコーディネート</h3>
+      <div class="columns is-mobile is-multiline wear-items is-gapless">
+        <div v-for="(coordinate, j) in item.coordinate"
+             :key="j"
+             class="column is-one-third card-column">
+          <nuxt-link :to="`${coordinatePath}/${coordinate.id}/`">
+            <the-item :img="imageUrl(coordinate.img.url)"
+                      brand=""
+                      name="" />
+          </nuxt-link>
+        </div>
+      </div>
+    </template>
+
   </div>
 </template>
 
@@ -22,9 +37,13 @@
 import { dateString } from '~/lib/date'
 import { getItem } from '~/plugins/cms'
 import { resizeImageUrl } from '~/lib/url'
+import TheItem from '~/components/molecules/TheItem.vue'
 
 export default {
-  components: {},
+  components: { TheItem },
+  data: () => ({
+    coordinatePath: process.env.CONSTANT.API_PATH_COORDINATE
+  }),
   head() {
     return {
       title: `${this.item.name} | ${this.item.brand}`,
@@ -35,6 +54,16 @@ export default {
           content: `${this.item.name},${
             this.item.brand
           },¥${this.item.price.toLocaleString()},${this.item.size}`
+        },
+        {
+          hid: 'description',
+          name: 'description',
+          content: `${this.item.name} | ${this.item.brand}`
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: `${this.item.name} | ${this.item.brand}`
         },
         {
           hid: 'og:url',

@@ -32,9 +32,9 @@ export default {
         {
           hid: 'keywords',
           name: 'keywords',
-          content: `${this.item.name} ${
+          content: `${this.item.name},${
             this.item.brand
-          } ￥${this.item.price.toLocaleString()} ${this.item.size}`
+          },¥${this.item.price.toLocaleString()},${this.item.size}`
         },
         {
           hid: 'og:url',

@@ -54,9 +54,9 @@ export default {
         {
           hid: 'keywords',
           name: 'keywords',
-          content: `エンジニア コーディネート ${this.item.weather} ${
+          content: `エンジニア,コーディネート,${this.item.weather},${
             this.item.temperature
-          }°`
+          }°,${this.wearItemName},${this.brandName}`
         },
         {
           hid: 'og:url',
@@ -88,6 +88,8 @@ export default {
     const item = await getItem('coordinate', params.id)
     const itemName = process.env.CONSTANT.ITEM_LIST
     let wear = []
+    let wearItemName = []
+    let brandName = []
     itemName.forEach(k => {
       // 配列の場合
       if (Array.isArray(item.data[k])) {
@@ -96,18 +98,24 @@ export default {
           // APIリクエスト用のパスを追加
           j['path'] = k
           wear.push(j)
+          wearItemName.push(j.name)
+          brandName.push(j.brand)
         })
         // それ以外は空以外なら追加
       } else if (item.data[k] !== null) {
         // APIリクエスト用のパスを追加
         item.data[k]['path'] = k
         wear.push(item.data[k])
+        wearItemName.push(item.data[k].name)
+        brandName.push(item.data[k].brand)
       }
     })
     return {
       id: params.id,
       item: item.data,
-      wear: wear
+      wear: wear,
+      wearItemName: wearItemName.join(','),
+      brandName: brandName.join(',')
     }
   }
 }

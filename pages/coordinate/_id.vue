@@ -49,14 +49,16 @@ export default {
   },
   head() {
     return {
-      title: `${this.convert(this.item.createdAt, false)}のコーディネート`,
+      title: `${this.convert(this.item.createdAt, false)} ${this.item.weather}${
+        this.item.temperature
+      }°C コーディネート`,
       meta: [
         {
           hid: 'keywords',
           name: 'keywords',
           content: `エンジニア,コーディネート,${this.item.weather},${
             this.item.temperature
-          }°,${this.wearItemName},${this.brandName}`
+          }°C,${this.wearItemName},${this.brandName}`
         },
         {
           hid: 'description',

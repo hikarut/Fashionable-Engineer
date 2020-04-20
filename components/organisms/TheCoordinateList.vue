@@ -99,7 +99,7 @@ export default {
   }
 }
 .date {
-  font-size: 13px;
+  font-size: 12px;
 }
 .card-content {
   padding: 0.5rem;

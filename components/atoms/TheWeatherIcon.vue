@@ -19,7 +19,7 @@ export default {
 
 <style lang="scss" scoped>
 .fas {
-  font-size: 17px;
+  font-size: 15px;
 }
 .fa-sun {
   color: $sun;

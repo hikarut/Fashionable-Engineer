@@ -63,7 +63,9 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: `${this.convert(this.item.createdAt, false)}のコーディネート`
+          content: `エンジニアのコーディネート | ${this.item.weather}${
+            this.item.temperature
+          }°C ${this.wearItemName} | ${this.brandName}`
         },
         {
           hid: 'og:description',

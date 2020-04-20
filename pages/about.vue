@@ -19,8 +19,22 @@
       <div class="profile">
         <p class="center-text">ひかる</p>
         <p class="center-text"><a href="https://wear.jp/light940/">WEAR</a>フォロワー14,000人</p>
-        <p class="blank">職業：Webエンジニア/マネージャー/データアナリスト/複業エンジニア</p>
-        <p class="blank">好きなブランド：UNIQLO,GU,無印良品,ZARA,COS,BEAUTY&YOUTH UNITED ARROWS,nano univers,TOMORROW LAND,margin,MR.OLIVE,N HOOLYWOOD</p>
+        <p class="blank center-text">【職業】</p>
+        <p class="center-text">Webエンジニア/マネージャー/データサイエンティスト/複業(副業)エンジニア</p>
+        <p class="blank center-text">【好きなブランド】</p>
+        <p class="center-text">
+          UNIQLO<br>
+          GU<br>
+          無印良品<br>
+          ZARA<br>
+          COS<br>
+          BEAUTY&YOUTH UNITED ARROWS<br>
+          nano univers<br>
+          TOMORROW LAND<br>
+          margin<br>
+          MR.OLIVE<br>
+          N HOOLYWOOD
+        </p>
       </div>
     </div>
   </div>

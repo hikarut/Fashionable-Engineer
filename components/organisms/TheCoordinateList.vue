@@ -81,14 +81,14 @@ export default {
     height: 270px;
     object-fit: cover;
   }
+  .card-content {
+    padding: 0.7rem;
+  }
 }
 // スマホでさらに小さい時
-@media screen and (max-width: 769px) {
-  .main {
-    width: 90%;
-    margin: 0 auto;
-    margin-top: 5%;
-    margin-bottom: 5%;
+@media screen and (max-width: 450px) {
+  .card-content {
+    padding: 1rem;
   }
 }
 // PC
@@ -97,11 +97,11 @@ export default {
     height: 360px;
     object-fit: cover;
   }
+  .card-content {
+    padding: 0.5rem;
+  }
 }
 .date {
-  font-size: 13px;
-}
-.card-content {
-  padding: 0.5rem;
+  font-size: 14px;
 }
 </style>

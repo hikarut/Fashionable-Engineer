@@ -1,5 +1,5 @@
 <template>
-  <span class="size">{{ temperature }}°</span>
+  <span class="size">{{ temperature }}°C</span>
 </template>
 
 <script>

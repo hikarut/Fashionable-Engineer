@@ -14,9 +14,9 @@ export default {}
 
 <style lang="scss" scoped>
 .bg-image {
-  background: url('/Hero.jpg');
+  background: url('/Hero_top.jpg');
   width: 100%;
-  height: 500px;
+  height: 400px;
   background-size: cover;
 }
 .bg-mask {
@@ -35,6 +35,9 @@ export default {}
 @media screen and (max-width: 400px) {
   .bg-text {
     font-size: 18px;
+  }
+  .bg-image {
+    height: 300px;
   }
 }
 </style>

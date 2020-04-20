@@ -6,7 +6,7 @@
   "DESCRIPTION": "エンジニアの日々のコーディネートを投稿します。その日の天気と気温も合わせて載せているので季節感の参考にして頂ければと思います。",
   "API_HOST": "https://fashionableengineer.microcms.io/api/v1",
   "API_PATH_COORDINATE": "/coordinate",
-  "API_PARAM_LIMIT_TOP": 6,
+  "API_PARAM_LIMIT_TOP": 12,
   "POST_PER_PAGE": 12,
   "IMAGE_WIDTH": 500,
   "ITEM_LIST": ["shoes","socks", "bottoms", "tops", "bag", "watch", "cap","accessory"]

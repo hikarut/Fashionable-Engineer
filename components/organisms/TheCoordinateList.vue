@@ -88,7 +88,7 @@ export default {
 // スマホでさらに小さい時
 @media screen and (max-width: 450px) {
   .card-content {
-    padding: 1rem;
+    padding: 0.3rem 1rem 0.3rem 1rem;
   }
 }
 // PC

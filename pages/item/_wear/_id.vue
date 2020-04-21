@@ -7,9 +7,9 @@
         </figure>
       </div>
       <div class="column">
-        <p>{{ item.name }}</p>
-        <p>{{ item.brand }}</p>
-        <p>￥{{ item.price.toLocaleString() }}</p>
+        <p class="name">{{ item.name }}</p>
+        <p>ブランド：{{ item.brand }}</p>
+        <p class="price">￥{{ item.price.toLocaleString() }}</p>
         <p>サイズ：{{ item.size }}</p>
         <p class="description" v-html="item.description" />
       </div>
@@ -23,8 +23,9 @@
              class="column is-one-third card-column">
           <nuxt-link :to="`${coordinatePath}/${coordinate.id}/`">
             <the-item :img="imageUrl(coordinate.img.url)"
-                      brand=""
-                      name="" />
+                      :brand="convert(coordinate.createdAt, false)"
+                      name=""
+                      price="" />
           </nuxt-link>
         </div>
       </div>
@@ -84,8 +85,8 @@ export default {
     }
   },
   methods: {
-    convert(str) {
-      return dateString(str)
+    convert(str, detail) {
+      return dateString(str, detail)
     },
     imageUrl(originUrl) {
       return resizeImageUrl(originUrl, process.env.CONSTANT.IMAGE_WIDTH)
@@ -102,6 +103,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.name {
+  font-size: 20px;
+}
+.price {
+  font-weight: bold;
+  font-size: 20px;
+  margin: 10px 0 10px 0;
+}
 // 上書き
 .columns {
   margin-left: 0;

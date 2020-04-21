@@ -39,7 +39,8 @@ export default {
   object-fit: cover;
 }
 .wear-brand {
-  font-size: 10px;
+  font-size: 12px;
+  font-weight: bold;
 }
 .wear-name {
   font-size: 8px;
@@ -48,7 +49,7 @@ export default {
   margin-bottom: 30px;
 }
 .card-content {
-  padding: 0.3rem;
+  padding: 0.5rem 0.5rem 1.5rem 0.5rem;
 }
 // PC版はレイアウト調整する
 @media screen and (min-width: 860px) {

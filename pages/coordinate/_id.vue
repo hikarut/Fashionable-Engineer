@@ -71,7 +71,9 @@ export default {
         {
           hid: 'og:description',
           property: 'og:description',
-          content: `${this.convert(this.item.createdAt, false)}のコーディネート`
+          content: `エンジニアのコーディネート | ${this.item.weather}${
+            this.item.temperature
+          }°C ${this.wearItemName} | ${this.brandName}`
         },
         {
           hid: 'og:url',
@@ -81,7 +83,9 @@ export default {
         {
           hid: 'og:title',
           property: 'og:title',
-          content: `${this.convert(this.item.createdAt, false)}のコーディネート`
+          content: `${this.convert(this.item.createdAt, false)} ${
+            this.item.weather
+          }${this.item.temperature}°C コーディネート`
         },
         {
           hid: 'og:image',

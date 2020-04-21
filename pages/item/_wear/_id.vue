@@ -7,9 +7,9 @@
         </figure>
       </div>
       <div class="column">
-        <p>{{ item.name }}</p>
-        <p>{{ item.brand }}</p>
-        <p>￥{{ item.price.toLocaleString() }}</p>
+        <p class="name">{{ item.name }}</p>
+        <p>ブランド：{{ item.brand }}</p>
+        <p class="price">￥{{ item.price.toLocaleString() }}</p>
         <p>サイズ：{{ item.size }}</p>
         <p class="description" v-html="item.description" />
       </div>
@@ -103,6 +103,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.name {
+  font-size: 20px;
+}
+.price {
+  font-weight: bold;
+  font-size: 20px;
+  margin: 10px 0 10px 0;
+}
 // 上書き
 .columns {
   margin-left: 0;

@@ -23,8 +23,9 @@
              class="column is-one-third card-column">
           <nuxt-link :to="`${coordinatePath}/${coordinate.id}/`">
             <the-item :img="imageUrl(coordinate.img.url)"
-                      brand=""
-                      name="" />
+                      :brand="convert(coordinate.createdAt, false)"
+                      name=""
+                      price="" />
           </nuxt-link>
         </div>
       </div>
@@ -84,8 +85,8 @@ export default {
     }
   },
   methods: {
-    convert(str) {
-      return dateString(str)
+    convert(str, detail) {
+      return dateString(str, detail)
     },
     imageUrl(originUrl) {
       return resizeImageUrl(originUrl, process.env.CONSTANT.IMAGE_WIDTH)

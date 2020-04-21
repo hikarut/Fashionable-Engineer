@@ -23,7 +23,8 @@
         <nuxt-link :to="`/item/${name.path}/${name.id}`">
           <the-item :img="imageUrl(name.img.url)"
                     :brand="name.brand"
-                    :name="name.name" />
+                    :name="name.name"
+                    :price="name.price" />
         </nuxt-link>
       </div>
     </div>

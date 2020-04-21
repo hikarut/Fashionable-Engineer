@@ -29,12 +29,15 @@
       </div>
     </div>
 
+    <the-more-button text="コーディネート一覧を見る" link="/coordinate/page/1" />
+
   </div>
 </template>
 
 <script>
 import TheWeatherIcon from '~/components/atoms/TheWeatherIcon.vue'
 import TheTemperature from '~/components/atoms/TheTemperature.vue'
+import TheMoreButton from '~/components/atoms/TheMoreButton.vue'
 import TheItem from '~/components/molecules/TheItem.vue'
 import TheModel from '~/components/atoms/TheModel.vue'
 import { dateString } from '~/lib/date'
@@ -45,6 +48,7 @@ export default {
   components: {
     TheWeatherIcon,
     TheTemperature,
+    TheMoreButton,
     TheItem,
     TheModel
   },
@@ -71,7 +75,9 @@ export default {
         {
           hid: 'og:description',
           property: 'og:description',
-          content: `${this.convert(this.item.createdAt, false)}のコーディネート`
+          content: `エンジニアのコーディネート | ${this.item.weather}${
+            this.item.temperature
+          }°C ${this.wearItemName} | ${this.brandName}`
         },
         {
           hid: 'og:url',
@@ -81,7 +87,9 @@ export default {
         {
           hid: 'og:title',
           property: 'og:title',
-          content: `${this.convert(this.item.createdAt, false)}のコーディネート`
+          content: `${this.convert(this.item.createdAt, false)} ${
+            this.item.weather
+          }${this.item.temperature}°C コーディネート`
         },
         {
           hid: 'og:image',

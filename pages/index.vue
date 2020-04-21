@@ -2,24 +2,22 @@
   <div class="main">
     <the-hero />
     <the-coordinate-list :items="items"/>
-    <div class="more">
-      <button class="button is-fullwidth" @click="go('/coordinate/page/1')">もっと見る</button>
-    </div>
+    <the-more-button text="コーディネート一覧を見る" link="/coordinate/page/1" />
   </div>
 </template>
 
 <script>
 import TheHero from '~/components/molecules/TheHero.vue'
 import TheCoordinateList from '~/components/organisms/TheCoordinateList.vue'
+import TheMoreButton from '~/components/atoms/TheMoreButton.vue'
 import { getData } from '~/plugins/cms'
-import method from '~/mixins/method'
 
 export default {
   components: {
     TheHero,
-    TheCoordinateList
+    TheCoordinateList,
+    TheMoreButton
   },
-  mixins: [method],
   async asyncData() {
     const items = await getData()
     return {
@@ -32,10 +30,5 @@ export default {
 <style lang="scss" scoped>
 .main {
   color: $black;
-}
-.more {
-  width: 50%;
-  margin: auto;
-  margin-bottom: 50px;
 }
 </style>

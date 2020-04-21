@@ -7,7 +7,7 @@
   "API_HOST": "https://fashionableengineer.microcms.io/api/v1",
   "API_PATH_COORDINATE": "/coordinate",
   "API_PARAM_LIMIT_TOP": 12,
-  "POST_PER_PAGE": 12,
+  "POST_PER_PAGE": 24,
   "IMAGE_WIDTH": 500,
   "ITEM_LIST": ["shoes","socks", "bottoms", "tops", "bag", "watch", "cap","accessory"]
 }

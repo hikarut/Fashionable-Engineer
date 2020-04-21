@@ -29,12 +29,15 @@
       </div>
     </div>
 
+    <the-more-button text="コーディネート一覧を見る" link="/coordinate/page/1" />
+
   </div>
 </template>
 
 <script>
 import TheWeatherIcon from '~/components/atoms/TheWeatherIcon.vue'
 import TheTemperature from '~/components/atoms/TheTemperature.vue'
+import TheMoreButton from '~/components/atoms/TheMoreButton.vue'
 import TheItem from '~/components/molecules/TheItem.vue'
 import TheModel from '~/components/atoms/TheModel.vue'
 import { dateString } from '~/lib/date'
@@ -45,6 +48,7 @@ export default {
   components: {
     TheWeatherIcon,
     TheTemperature,
+    TheMoreButton,
     TheItem,
     TheModel
   },

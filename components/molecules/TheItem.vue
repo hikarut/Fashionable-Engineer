@@ -58,11 +58,11 @@ export default {
   padding: 0.5rem 0.5rem 1.5rem 0.5rem;
 }
 .wear-price {
-  position: absolute; /*絶対配置*/
-  color: white; /*文字は白に*/
+  position: absolute;
+  color: $white;
   left: 5px;
   bottom: 10px;
-  background-color: black;
+  background-color: $black;
   padding: 2px 6px 2px 6px;
   border-radius: 2px;
   font-size: 12px;

@@ -12,10 +12,13 @@
         <span class="date">{{ convert(item.createdAt, true) }}</span>
         <p class="description" v-html="item.description" />
         <the-model />
+        <p class="sns">
+          シェアする：<the-twitter-icon :url="shareUrl()"/>
+        </p>
       </div>
     </div>
 
-    <h3 class="subtitle is-5 center-text">着用アイテム</h3>
+    <h3 class="blank subtitle is-5 center-text">着用アイテム</h3>
     <div class="columns is-mobile is-multiline wear-items is-gapless">
       <div v-for="(name, j) in wear"
            :key="j"
@@ -38,6 +41,7 @@
 import TheWeatherIcon from '~/components/atoms/TheWeatherIcon.vue'
 import TheTemperature from '~/components/atoms/TheTemperature.vue'
 import TheMoreButton from '~/components/atoms/TheMoreButton.vue'
+import TheTwitterIcon from '~/components/atoms/TheTwitterIcon.vue'
 import TheItem from '~/components/molecules/TheItem.vue'
 import TheModel from '~/components/atoms/TheModel.vue'
 import { dateString } from '~/lib/date'
@@ -49,14 +53,15 @@ export default {
     TheWeatherIcon,
     TheTemperature,
     TheMoreButton,
+    TheTwitterIcon,
     TheItem,
     TheModel
   },
   head() {
     return {
-      title: `${this.convert(this.item.createdAt, false)} ${this.item.weather}${
-        this.item.temperature
-      }°C コーディネート`,
+      title: `${this.convert(this.item.createdAt, false)} ${
+        this.item.weather
+      }:${this.item.temperature}°C コーディネート`,
       meta: [
         {
           hid: 'keywords',
@@ -105,6 +110,14 @@ export default {
     },
     imageUrl(originUrl) {
       return resizeImageUrl(originUrl, process.env.CONSTANT.IMAGE_WIDTH)
+    },
+    shareUrl() {
+      const url = `${process.env.CONSTANT.URL}${this.$route.path}`
+      const text = 'エンジニアのコーディネート👨‍💻'
+      const tag = `コーディネート,ファッション,${this.item.weather},${
+        this.wearItemName
+      },${this.brandName}`
+      return `https://twitter.com/intent/tweet?url=${url}&text=${text}&hashtags=${tag}`
     }
   },
   async asyncData({ params }) {
@@ -164,6 +177,12 @@ export default {
 }
 .date {
   font-size: 13px;
+}
+.blank {
+  margin-top: 50px;
+}
+.sns {
+  text-align: right;
 }
 // PC版はレイアウト調整する
 @media screen and (min-width: 860px) {

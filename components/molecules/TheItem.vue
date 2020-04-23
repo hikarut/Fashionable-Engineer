@@ -28,8 +28,8 @@ export default {
       default: ''
     },
     price: {
-      type: String,
-      default: ''
+      type: Number,
+      default: null
     }
   }
 }

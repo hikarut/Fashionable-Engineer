@@ -29,10 +29,11 @@
                     :name="name.name"
                     :price="name.price" />
         </nuxt-link>
+        <p v-if="name.affiliate1 !== undefined" class="affiliate" v-html="name.affiliate1" />
       </div>
     </div>
 
-    <the-more-button text="コーディネート一覧を見る" link="/coordinate/page/1" />
+    <the-more-button class="more-btn" text="コーディネート一覧を見る" link="/coordinate/page/1" />
 
   </div>
 </template>
@@ -146,6 +147,7 @@ export default {
         brandName.push(item.data[k].brand)
       }
     })
+    console.log(wear)
     return {
       id: params.id,
       item: item.data,
@@ -164,6 +166,7 @@ export default {
   margin-right: 0;
   margin-top: 0;
   padding: 0.5rem;
+  text-align: center;
 }
 .description {
   margin-top: 20px;
@@ -183,6 +186,16 @@ export default {
 }
 .sns {
   text-align: right;
+}
+.affiliate {
+  text-align: center;
+  background-color: $black;
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.more-btn {
+  padding-top: 30px;
 }
 // PC版はレイアウト調整する
 @media screen and (min-width: 860px) {

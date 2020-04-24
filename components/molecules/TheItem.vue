@@ -3,7 +3,7 @@
     <div class="card-content">
       <figure class="wear-image">
         <img v-lazy="img">
-        <p v-if="price !== ''" class="wear-price">￥{{ price.toLocaleString() }}</p>
+        <p v-if="price !== null" class="wear-price">￥{{ price.toLocaleString() }}</p>
       </figure>
       <p class="wear-brand center-text">{{ brand }}</p>
       <p class="wear-name center-text">{{ name }}</p>

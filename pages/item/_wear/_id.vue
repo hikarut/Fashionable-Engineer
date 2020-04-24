@@ -14,6 +14,7 @@
         <p class="description" v-html="item.description" />
       </div>
     </div>
+    <p v-if="item.affiliate1 !== undefined" class="affiliate" v-html="item.affiliate1" />
 
     <template v-if="item.coordinate.length !== 0">
       <h3 class="subtitle is-5 center-text">このアイテムを使ったコーディネート</h3>
@@ -24,8 +25,7 @@
           <nuxt-link :to="`${coordinatePath}/${coordinate.id}/`">
             <the-item :img="imageUrl(coordinate.img.url)"
                       :brand="convert(coordinate.createdAt, false)"
-                      name=""
-                      price="" />
+                      name="" />
           </nuxt-link>
         </div>
       </div>
@@ -123,6 +123,13 @@ export default {
   margin-bottom: 20px;
   // URLなどの長い文字を折り返す
   word-wrap: break-word;
+}
+.affiliate {
+  width: 100px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: $black;
+  margin-bottom: 50px;
 }
 // PC版はレイアウト調整する
 @media screen and (min-width: 860px) {

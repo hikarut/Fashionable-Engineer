@@ -166,6 +166,7 @@ export default {
   margin-right: 0;
   margin-top: 0;
   padding: 0.5rem;
+  text-align: center;
 }
 .description {
   margin-top: 20px;
@@ -189,8 +190,9 @@ export default {
 .affiliate {
   text-align: center;
   background-color: $black;
-  margin-left: 15px;
-  margin-right: 15px;
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .more-btn {
   padding-top: 30px;

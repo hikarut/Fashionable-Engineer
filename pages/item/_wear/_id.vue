@@ -31,6 +31,8 @@
       </div>
     </template>
 
+    <the-more-button class="more-btn" text="コーディネート一覧を見る" link="/coordinate/page/1" />
+
   </div>
 </template>
 
@@ -39,9 +41,10 @@ import { dateString } from '~/lib/date'
 import { getItem } from '~/plugins/cms'
 import { resizeImageUrl } from '~/lib/url'
 import TheItem from '~/components/molecules/TheItem.vue'
+import TheMoreButton from '~/components/atoms/TheMoreButton.vue'
 
 export default {
-  components: { TheItem },
+  components: { TheItem, TheMoreButton },
   data: () => ({
     coordinatePath: process.env.CONSTANT.API_PATH_COORDINATE
   }),

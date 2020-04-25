@@ -22,7 +22,7 @@
     <div class="columns is-mobile is-multiline wear-items is-gapless">
       <div v-for="(name, j) in wear"
            :key="j"
-           class="column is-one-quarter-desktop is-one-third-mobile card-column">
+           class="column is-one-quarter-desktop is-one-third-mobile card-column wear-item">
         <nuxt-link :to="`/item/${name.path}/${name.id}`">
           <the-item :img="imageUrl(name.img.url)"
                     :brand="name.brand"
@@ -33,7 +33,7 @@
       </div>
     </div>
 
-    <the-more-button class="more-btn" text="コーディネート一覧を見る" link="/coordinate/page/1" />
+    <the-more-button text="コーディネート一覧を見る" link="/coordinate/page/1" />
 
   </div>
 </template>
@@ -177,6 +177,9 @@ export default {
 .wear-items {
   margin-bottom: 20px;
 }
+.wear-item {
+  margin-bottom: 50px !important;
+}
 .date {
   font-size: 13px;
 }
@@ -191,9 +194,6 @@ export default {
   width: 100px;
   margin: 0 auto;
   background-color: $black;
-}
-.more-btn {
-  padding-top: 30px;
 }
 // PC版はレイアウト調整する
 @media screen and (min-width: 860px) {

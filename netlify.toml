@@ -6,3 +6,73 @@
 
 [context.branch-deploy]
   command = "npm run generate:dev"
+
+[[redirects]]
+  from = "/coordinate/d08dzpr2h"
+  to = "/coordinate/20200426"
+  status = 301
+
+[[redirects]]
+  from = "/coordinate/n8yfl1iiv"
+  to = "/coordinate/20200424"
+  status = 301
+
+[[redirects]]
+  from = "/coordinate/RUPwBmFnD"
+  to = "/coordinate/20200423"
+  status = 301
+
+[[redirects]]
+  from = "/coordinate/UbnTfWI29"
+  to = "/coordinate/20200422"
+  status = 301
+
+[[redirects]]
+  from = "/coordinate/EslGKiv2B"
+  to = "/coordinate/20200421"
+  status = 301
+
+[[redirects]]
+  from = "/coordinate/Tpcm3UZcC"
+  to = "/coordinate/20200420"
+  status = 301
+
+[[redirects]]
+  from = "/coordinate/-_FkqRVDO"
+  to = "/coordinate/20200419"
+  status = 301
+
+[[redirects]]
+  from = "/coordinate/-_FkqRVDO"
+  to = "/coordinate/20200419"
+  status = 301
+
+[[redirects]]
+  from = "/coordinate/d_K5-uZIG"
+  to = "/coordinate/20200322"
+  status = 301
+
+[[redirects]]
+  from = "/coordinate/AJKZbe9ak"
+  to = "/coordinate/20200312"
+  status = 301
+
+[[redirects]]
+  from = "/coordinate/z287Ar-xj"
+  to = "/coordinate/20200306"
+  status = 301
+
+[[redirects]]
+  from = "/coordinate/60zHeq_QH"
+  to = "/coordinate/20191231"
+  status = 301
+
+[[redirects]]
+  from = "/coordinate/7ayZARoqh"
+  to = "/coordinate/20200223"
+  status = 301
+
+[[redirects]]
+  from = "/item/shoes/e1ucjush6/"
+  to = "/item/shoes/allbirds/"
+  status = 301

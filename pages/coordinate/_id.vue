@@ -147,7 +147,6 @@ export default {
         brandName.push(item.data[k].brand)
       }
     })
-    console.log(wear)
     return {
       id: params.id,
       item: item.data,

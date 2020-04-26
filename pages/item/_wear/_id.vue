@@ -12,6 +12,9 @@
         <p class="price">￥{{ item.price.toLocaleString() }}</p>
         <p>サイズ：{{ item.size }}</p>
         <p class="description" v-html="item.description" />
+        <p class="sns">
+          シェアする：<the-twitter-icon :url="shareUrl()"/>
+        </p>
       </div>
     </div>
     <p v-if="item.affiliate1 !== undefined" class="affiliate" v-html="item.affiliate1" />
@@ -42,9 +45,10 @@ import { getItem } from '~/plugins/cms'
 import { resizeImageUrl } from '~/lib/url'
 import TheItem from '~/components/molecules/TheItem.vue'
 import TheMoreButton from '~/components/atoms/TheMoreButton.vue'
+import TheTwitterIcon from '~/components/atoms/TheTwitterIcon.vue'
 
 export default {
-  components: { TheItem, TheMoreButton },
+  components: { TheItem, TheMoreButton, TheTwitterIcon },
   data: () => ({
     coordinatePath: process.env.CONSTANT.API_PATH_COORDINATE
   }),
@@ -93,6 +97,12 @@ export default {
     },
     imageUrl(originUrl) {
       return resizeImageUrl(originUrl, process.env.CONSTANT.IMAGE_WIDTH)
+    },
+    shareUrl() {
+      const url = `${process.env.CONSTANT.URL}${this.$route.path}`
+      const text = this.item.name
+      const tag = `${this.item.brand},${this.item.name}`
+      return `https://twitter.com/intent/tweet?url=${url}&text=${text}&hashtags=${tag}`
     }
   },
   async asyncData({ params }) {
@@ -133,6 +143,9 @@ export default {
   text-align: center;
   background-color: $black;
   margin-bottom: 50px;
+}
+.sns {
+  text-align: right;
 }
 // PC版はレイアウト調整する
 @media screen and (min-width: 860px) {

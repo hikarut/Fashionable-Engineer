@@ -76,3 +76,8 @@
   from = "/item/shoes/e1ucjush6/"
   to = "/item/shoes/allbirds/"
   status = 301
+
+[[redirects]]
+  from = "/item/tops/uf26urvft/"
+  to = "/item/tops/muji_long_down/"
+  status = 301

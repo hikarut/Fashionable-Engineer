@@ -2,29 +2,22 @@
   <div class="main">
     <the-coordinate-list :items="items"/>
     <the-pagination :total="total" :page="page" />
+    <the-ad-sense-display />
   </div>
 </template>
 
 <script>
 import TheCoordinateList from '~/components/organisms/TheCoordinateList.vue'
 import ThePagination from '~/components/molecules/ThePagination.vue'
+import TheAdSenseDisplay from '~/components/atoms/TheAdSenseDisplay.vue'
 import { getData } from '~/plugins/cms'
 import { checkPage } from '~/lib/validation'
 
 export default {
-  // head() {
-  //   return {
-  //     link: [
-  //       {
-  //         rel: 'canonical',
-  //         href: 'http://localhost:3000/coordinate/page/1'
-  //       }
-  //     ]
-  //   }
-  // },
   components: {
     TheCoordinateList,
-    ThePagination
+    ThePagination,
+    TheAdSenseDisplay
   },
   async asyncData({ params }) {
     const page = checkPage(params.number)

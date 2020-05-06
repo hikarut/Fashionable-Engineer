@@ -1,5 +1,6 @@
 const environment = process.env.NODE_ENV || 'dev'
 const apiKey = process.env.API_KEY || 'apiKey'
+const adsenseId = process.env.ADSENSE_ID || 'adsenseId'
 import constant from './config/constant.json'
 import { getAllPath } from './plugins/cms'
 
@@ -76,7 +77,17 @@ export default {
   /*
   ** Nuxt.js modules
   */
-  modules: ['@nuxtjs/style-resources', '@nuxtjs/axios', '@nuxtjs/sitemap'],
+  modules: [
+    '@nuxtjs/style-resources',
+    '@nuxtjs/axios',
+    '@nuxtjs/sitemap',
+    [
+      '@nuxtjs/google-adsense',
+      {
+        id: adsenseId
+      }
+    ]
+  ],
 
   styleResources: {
     scss: ['~/assets/css/common.scss']

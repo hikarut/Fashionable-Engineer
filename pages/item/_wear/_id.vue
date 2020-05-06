@@ -35,6 +35,7 @@
     </template>
 
     <the-more-button class="more-btn" text="コーディネート一覧を見る" link="/coordinate/page/1" />
+    <the-ad-sense-display />
 
   </div>
 </template>
@@ -46,9 +47,15 @@ import { resizeImageUrl } from '~/lib/url'
 import TheItem from '~/components/molecules/TheItem.vue'
 import TheMoreButton from '~/components/atoms/TheMoreButton.vue'
 import TheTwitterIcon from '~/components/atoms/TheTwitterIcon.vue'
+import TheAdSenseDisplay from '~/components/atoms/TheAdSenseDisplay.vue'
 
 export default {
-  components: { TheItem, TheMoreButton, TheTwitterIcon },
+  components: {
+    TheItem,
+    TheMoreButton,
+    TheTwitterIcon,
+    TheAdSenseDisplay
+  },
   data: () => ({
     coordinatePath: process.env.CONSTANT.API_PATH_COORDINATE
   }),

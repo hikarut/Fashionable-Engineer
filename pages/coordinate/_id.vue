@@ -34,6 +34,7 @@
     </div>
 
     <the-more-button text="コーディネート一覧を見る" link="/coordinate/page/1" />
+    <the-ad-sense-display />
 
   </div>
 </template>
@@ -45,6 +46,7 @@ import TheMoreButton from '~/components/atoms/TheMoreButton.vue'
 import TheTwitterIcon from '~/components/atoms/TheTwitterIcon.vue'
 import TheItem from '~/components/molecules/TheItem.vue'
 import TheModel from '~/components/atoms/TheModel.vue'
+import TheAdSenseDisplay from '~/components/atoms/TheAdSenseDisplay.vue'
 import { dateString } from '~/lib/date'
 import { getItem } from '~/plugins/cms'
 import { resizeImageUrl } from '~/lib/url'
@@ -56,7 +58,8 @@ export default {
     TheMoreButton,
     TheTwitterIcon,
     TheItem,
-    TheModel
+    TheModel,
+    TheAdSenseDisplay
   },
   head() {
     return {

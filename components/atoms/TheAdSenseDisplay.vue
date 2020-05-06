@@ -2,7 +2,6 @@
   <div class="ad">
     <adsbygoogle
       :ad-slot="'5151231350'"
-      :ad-format="'auto'"
       class="adsbygoogle" />
   </div>
 </template>

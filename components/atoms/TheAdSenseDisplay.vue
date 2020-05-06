@@ -2,7 +2,7 @@
   <div class="ad">
     <adsbygoogle
       :ad-slot="'5151231350'"
-      ad-format=""
+      :ad-format="'auto'"
       class="adsbygoogle" />
   </div>
 </template>
@@ -12,6 +12,11 @@ export default {}
 </script>
 
 <style scoped>
+.adsbygoogle {
+  display: inline-block;
+  width: 100%;
+  height: 90px;
+}
 .ad {
   width: 90%;
   margin: 0 auto;
